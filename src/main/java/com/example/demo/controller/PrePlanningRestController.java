@@ -30,12 +30,12 @@ public class PrePlanningRestController {
 	@Autowired(required=true)
 	private IPrePlanningService prePlanningService;                           
 	
-	@GetMapping("/planning")
+	@GetMapping("/preplanning")
 	public List<PrePlanning> index(){
 		return prePlanningService.findAll();                                     
 	}
 	
-	@GetMapping("/planning/{id}")
+	@GetMapping("/preplanning/{id}")
 	public ResponseEntity<?> show(@PathVariable Long id) {
 		
 		PrePlanning planning = null;
@@ -55,12 +55,12 @@ public class PrePlanningRestController {
 			response.put("mensaje", "¡El #: ".concat(id.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<PrePlanning>(planning, HttpStatus.OK);                                       //Buscar usuario por id
+		return new ResponseEntity<PrePlanning>(planning, HttpStatus.OK);                                       //Buscar preplanning por id
 	}
 	
-	@PostMapping("/planning")
+	@PostMapping("/preplanning")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<?> create(@RequestBody PrePlanning planning) {                              //Crear usuario
+	public ResponseEntity<?> create(@RequestBody PrePlanning planning) {                              //Crear preplanning
 		
 		PrePlanning planningNew = null;
 		Map<String, Object> response = new HashMap<>();
@@ -78,7 +78,7 @@ public class PrePlanningRestController {
 	}
 	
 	
-	@PutMapping("/planning/{id}")
+	@PutMapping("/preplanning/{id}")
 	public ResponseEntity<?> update(@RequestBody PrePlanning planning, @PathVariable Long id) {
 		PrePlanning planningActual = prePlanningService.findById(id);
 		PrePlanning planningUpdated = null;
@@ -110,8 +110,8 @@ public class PrePlanningRestController {
 	}
 	
 	
-	@DeleteMapping("/planning/{id}")
-	public ResponseEntity<?> delete(@PathVariable Long id) {                                       //Borrar usuario por id
+	@DeleteMapping("/preplanning/{id}")
+	public ResponseEntity<?> delete(@PathVariable Long id) {                                       //Borrar preplanning por id
 		Map<String, Object> response = new HashMap<>();
 		try {
 			prePlanningService.delete(id);
@@ -125,5 +125,13 @@ public class PrePlanningRestController {
 		
 	
 	}
+	
+	
+	
+	////////////////////////////////////PrePlanning Preview//////////////////////////////////////////////
+	
+
+	 
+	
 
 }

@@ -52,15 +52,15 @@ public class CategorizationRestController {
 		}
 		
 		if(categorization==null) {
-			response.put("mensaje", "¡La categorizaión #: ".concat(id.toString().concat(" no existe en la base de datos!")));
+			response.put("mensaje", "¡La categorización #: ".concat(id.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<Categorization>(categorization, HttpStatus.OK);                                       //Buscar usuario por id
+		return new ResponseEntity<Categorization>(categorization, HttpStatus.OK);                                       //Buscar categoria por id
 	}
 	
 	@PostMapping("/categorization")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<?> create(@RequestBody Categorization categorization) {                              //Crear usuario
+	public ResponseEntity<?> create(@RequestBody Categorization categorization) {                              //Crear categoria
 		
 		Categorization categorizationNew = null;
 		Map<String, Object> response = new HashMap<>();
@@ -106,7 +106,7 @@ public class CategorizationRestController {
 }
 	
 	@DeleteMapping("/categorization/{id}")
-	public ResponseEntity<?> delete(@PathVariable Long id) {                                       //Borrar usuario por id
+	public ResponseEntity<?> delete(@PathVariable Long id) {                                       //Borrar categoria por id
 		Map<String, Object> response = new HashMap<>();
 		try {
 			iCategorizationService.delete(id);

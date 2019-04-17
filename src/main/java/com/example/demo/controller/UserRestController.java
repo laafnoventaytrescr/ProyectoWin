@@ -80,10 +80,7 @@ public class UserRestController {
 		
 		return encodedPassword;
 	}
-	
-	
-	
-	
+
 	
 	////////////////////////////////////////////////////////////////////////////////////
 	
@@ -113,6 +110,8 @@ public class UserRestController {
 			return new ResponseEntity<>(null,HttpStatus.NOT_FOUND); 
 		}
 	}
+	
+	
 	
 	
 }

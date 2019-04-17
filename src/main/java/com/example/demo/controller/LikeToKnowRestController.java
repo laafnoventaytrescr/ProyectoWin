@@ -56,12 +56,12 @@ public class LikeToKnowRestController {
 			response.put("mensaje", "¡El #: ".concat(id.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<LikeToKnow>(toKnow, HttpStatus.OK);                                       //Buscar usuario por id
+		return new ResponseEntity<LikeToKnow>(toKnow, HttpStatus.OK);                                       //Buscar likeToKnow por id
 	}
 	
 	@PostMapping("/toKnow")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<?> create(@RequestBody LikeToKnow toKnow) {                              //Crear usuario
+	public ResponseEntity<?> create(@RequestBody LikeToKnow toKnow) {                              //Crear likeToKnow
 		
 		LikeToKnow toKnowNew = null;
 		Map<String, Object> response = new HashMap<>();
@@ -107,7 +107,7 @@ public class LikeToKnowRestController {
 }
 	
 	@DeleteMapping("/toKnow/{id}")
-	public ResponseEntity<?> delete(@PathVariable Long id) {                                       //Borrar usuario por id
+	public ResponseEntity<?> delete(@PathVariable Long id) {                                       //Borrar likeToKnow por id
 		Map<String, Object> response = new HashMap<>();
 		try {
 			iLikeToKnowService.delete(id);

@@ -15,4 +15,6 @@ public class MvcConfig implements WebMvcConfigurer {
 		return new BCryptPasswordEncoder();                               //Bean de Bcrypt para encriptar contraseñas                           
 	}
 	
+	 
+	
 }

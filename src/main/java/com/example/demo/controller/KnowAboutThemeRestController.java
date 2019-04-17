@@ -56,12 +56,12 @@ public class KnowAboutThemeRestController {
 			response.put("mensaje", "¡El #: ".concat(id.toString().concat(" no existe en la base de datos!")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<KnowAboutTheme>(knowAbout, HttpStatus.OK);                                       //Buscar usuario por id
+		return new ResponseEntity<KnowAboutTheme>(knowAbout, HttpStatus.OK);                                       //Buscar knowAbout por id
 	}
 	
 	@PostMapping("/knowAbout")
 	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<?> create(@RequestBody KnowAboutTheme knowAbout) {                              //Crear usuario
+	public ResponseEntity<?> create(@RequestBody KnowAboutTheme knowAbout) {                              //Crear knowAbout
 		
 		KnowAboutTheme knowAboutNew = null;
 		Map<String, Object> response = new HashMap<>();
@@ -107,7 +107,7 @@ public class KnowAboutThemeRestController {
 }
 	
 	@DeleteMapping("/knowAbout/{id}")
-	public ResponseEntity<?> delete(@PathVariable Long id) {                                       //Borrar usuario por id
+	public ResponseEntity<?> delete(@PathVariable Long id) {                                       //Borrar knowAbout por id
 		Map<String, Object> response = new HashMap<>();
 		try {
 			knowAboutThemeService.delete(id);

@@ -15,6 +15,13 @@ insert into know_about_theme(description) values ('Know About Theme 1');
 insert into know_about_theme(description) values ('Know About Theme 2');
 insert into know_about_theme(description) values ('Know About Theme 3');
 
+insert into Plan(theme, start_date, duration_weeks, option_work, educational_period, regional_direction, circuit, school, level_of_teaches, user_id) values ('El Mundialito', '12/12/2018', '3 weeks', 'Didáctica', 'Segundo', 'Atenas', '08', 'Jesús', 'Materno', 1);
+insert into Plan(theme, start_date, duration_weeks, option_work, educational_period, regional_direction, circuit, school, level_of_teaches, user_id) values ('Bullying', '04/04/2019', '2 weeks', 'Didáctica', 'Primero', 'Atenas', '08', 'Jesús', 'Materno', 2);
+
+insert into pre_planning(planning_id, main_like_to_know, know_about_theme_id, like_to_know_id, categorization_id) values (1, 'El Mundial', 1, 1, 1);
+insert into pre_planning(planning_id, main_like_to_know, know_about_theme_id, like_to_know_id, categorization_id) values (2, 'El Bullying', 2, 2, 2);
+
+
 
 	
 	
