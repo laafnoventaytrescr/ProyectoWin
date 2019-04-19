@@ -33,7 +33,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests().antMatchers("/login","/registro/**","/email/**","/api/**").permitAll()                           //Permitir login, registro y email sin generar token
+		http.authorizeRequests().antMatchers("/login","/registro/**","/email/**","/v1/users/**").permitAll()                           //Permitir login, registro y email sin generar token
 		.anyRequest().authenticated()		
 		.and()
 		.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtService))                                   //Filtro de autenticacion (login)      
