@@ -16,7 +16,7 @@ public class Categorization implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long idCategorization;
 
-	String type;
+	String categs;
 	
 	public Long getIdCategorization() {
 		return idCategorization;
@@ -25,15 +25,17 @@ public class Categorization implements Serializable {
 	public void setIdCategorization(Long idCategorization) {
 		this.idCategorization = idCategorization;
 	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
 	
+	public String getCategs() {
+		return categs;
+	}
+
+	public void setCategs(String categs) {
+		this.categs = categs;
+	}
+
+
+
 
 
 	/**

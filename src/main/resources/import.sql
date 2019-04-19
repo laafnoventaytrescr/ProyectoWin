@@ -3,9 +3,9 @@ insert into users(email, id_number, name, birth_date, regional_direction, circui
 insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password) values ('jfelipe221095@yahoo.es', '207450780','Jose Vargas', '1995-10-22','Desampa','Desampa','Escuela Desampa','Preescolar', 'Piero2210');
 
 
-insert into categorization(type) values ('Categorzation 1');
-insert into categorization(type) values ('Categorzation 2');
-insert into categorization(type) values ('Categorzation 3');
+insert into categorization(categs) values ('Categorzation 1');
+insert into categorization(categs) values ('Categorzation 2');
+insert into categorization(categs) values ('Categorzation 3');
 
 insert into like_to_know(description, categorization_id) values ('Like to know 1', 1);
 insert into like_to_know(description, categorization_id) values ('Like to know 2', 2);
