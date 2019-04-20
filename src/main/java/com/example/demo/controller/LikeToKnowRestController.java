@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.entity.LikeToKnow;
+import com.example.demo.model.entity.Planning;
+import com.example.demo.model.entity.User;
+import com.example.demo.model.error.DataAccessRuntimeException;
 import com.example.demo.model.service.ILikeToKnowService;
 
 @CrossOrigin(origins= {"http://localhost:3000"})
@@ -78,6 +83,7 @@ public class LikeToKnowRestController {
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
 	
+	
 	@PutMapping("/toKnow/{id}")
 	public ResponseEntity<?> update(@RequestBody LikeToKnow likeToKnow, @PathVariable Long id) {
 		LikeToKnow toKnowActual = iLikeToKnowService.findById(id);
@@ -101,7 +107,7 @@ public class LikeToKnowRestController {
 	}
 	
 	response.put("mensaje", "¡Ha sido actualizado con éxito!");
-	response.put("toKnow", toKnowUpdated);
+	response.put("likeToKnow", toKnowUpdated);
 	
 	return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 }

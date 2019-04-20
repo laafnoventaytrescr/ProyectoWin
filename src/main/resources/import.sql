@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password, role) values ('jfelipe221095@gmail.com', '207450768','Felipe Ramirez', '1995-10-22','Atenas','Jesús','Escuela Jesús','Preescolar', '$2a$10$bBq1gZF91mtw1jBXZaGW9eqVnTraGqr5UKTUHt95FvjYsL4aKaLRm', 'user');
-insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password, role) values ('jfelipe2210@yahoo.es', '207450769','Jose Vargas', '1995-10-22','Desampa','Desampa','Escuela Desampa','Preescolar', '$2a$10$bBq1gZF91mtw1jBXZaGW9eqVnTraGqr5UKTUHt95FvjYsL4aKaLRm', 'user');
-insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password) values ('jfelipe221095@yahoo.es', '207450780','Jose Vargas', '1995-10-22','Desampa','Desampa','Escuela Desampa','Preescolar', 'Piero2210');
-insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password, role) values ('laaf93cr@gmail.com', '304750404','Luis Arce', '1993-11-19','Turrialba','02','Las Américas','Preescolar', '$2a$10$bBq1gZF91mtw1jBXZaGW9eqVnTraGqr5UKTUHt95FvjYsL4aKaLRm', 'user');
-=======
 insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password, role) values ('prueba@mep.go.cr', '207450768','Felipe Ramirez', '1995-10-22','Atenas','Jesús','Escuela Jesús','Preescolar', '$2a$10$w.8SltnBOFXXp5fAIq1Xqu.9Io2d8elApDVheaEBb9tAhzIgrlzxS', 'user');
 insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password, role) values ('jfelipe221095@gmail.com', '207450769','Jose Vargas', '1995-10-22','Desampa','Desampa','Escuela Desampa','Preescolar', '$2a$10$bBq1gZF91mtw1jBXZaGW9eqVnTraGqr5UKTUHt95FvjYsL4aKaLRm', 'user');
 insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password, role) values ('jfelipe2210@yahoo.es', '207450780','Jose Vargas', '1995-10-22','Desampa','Desampa','Escuela Desampa','Preescolar', '$2a$10$bBq1gZF91mtw1jBXZaGW9eqVnTraGqr5UKTUHt95FvjYsL4aKaLRm', 'user');
-
->>>>>>> 8a1223219b23eed9712918b0000d7ac743f7bc47
+insert into users(email, id_number, name, birth_date, regional_direction, circuito, school, level_Of_teaches, password, role) values ('laaf93cr@gmail.com', '304750404','Luis Arce', '1993-11-19','Turrialba','02','Las Américas','Preescolar', '$2a$10$bBq1gZF91mtw1jBXZaGW9eqVnTraGqr5UKTUHt95FvjYsL4aKaLRm', 'user');
 
 insert into categorization(categs) values ('Categorzation 1');
 insert into categorization(categs) values ('Categorzation 2');
