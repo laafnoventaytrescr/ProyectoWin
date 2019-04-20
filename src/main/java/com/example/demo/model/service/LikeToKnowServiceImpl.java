@@ -17,9 +17,9 @@ public class LikeToKnowServiceImpl implements ILikeToKnowService{
 	
 	@Override
 	@Transactional(readOnly=true)
-	public List<LikeToKnow> findAll() {
+	public List<LikeToKnow> findAllByIdLikeToKnow(Long id) {
 		// TODO Auto-generated method stub
-		return (List<LikeToKnow>)iLikeToKnowDao.findAll();
+		return iLikeToKnowDao.findLikeToKnowByUser(id);
 	}
 	
 	@Override
@@ -42,4 +42,6 @@ public class LikeToKnowServiceImpl implements ILikeToKnowService{
 		// TODO Auto-generated method stub
 		iLikeToKnowDao.deleteById(id);
 	}
+
+
 }

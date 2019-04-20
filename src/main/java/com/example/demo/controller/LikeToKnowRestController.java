@@ -31,9 +31,9 @@ public class LikeToKnowRestController {
 	@Autowired(required=true)
 	private ILikeToKnowService iLikeToKnowService;
 	
-	@GetMapping("/toKnow")
-	public List<LikeToKnow> index(){
-		return iLikeToKnowService.findAll();
+	@GetMapping("/toKnowList/{id}")
+	public List<LikeToKnow> index(@PathVariable Long id){
+		return iLikeToKnowService.findAllByIdLikeToKnow(id);
 	}
 	
 	@GetMapping("/toKnow/{id}")

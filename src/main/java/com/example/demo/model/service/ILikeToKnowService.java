@@ -7,7 +7,7 @@ import com.example.demo.model.entity.LikeToKnow;
 
 public interface ILikeToKnowService {
 	
-	public List<LikeToKnow> findAll();
+	public List<LikeToKnow> findAllByIdLikeToKnow(Long id);
 	
 	public LikeToKnow findById(Long id);
 	

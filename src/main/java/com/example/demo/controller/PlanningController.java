@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.StaticSpring;
@@ -85,7 +84,7 @@ public class PlanningController {
 	}
 	
 	@GetMapping(value="/createPlan")
-	public ResponseEntity<?> loadUser(HttpServletRequest request){
+	public ResponseEntity<?> loadPlan(HttpServletRequest request){
 			
 		String email = getUserEmailByToken(request);
 		User user = null;
