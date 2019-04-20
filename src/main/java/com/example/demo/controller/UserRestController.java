@@ -9,6 +9,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,7 +26,7 @@ import com.example.demo.model.entity.User;
 import com.example.demo.model.error.DataAccessRuntimeException;
 import com.example.demo.model.service.IUserService;
 
-
+@CrossOrigin(origins= {"http://localhost:3000"})
 @RestController
 @RequestMapping("/v1")                                       //Controlador para gestionar funcionalidad de usuario
 public class UserRestController {

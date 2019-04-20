@@ -90,7 +90,7 @@ public class CategorizationRestController {
 		
 		try {
 		
-			categoryActual.setType(categorization.getType());
+			categoryActual.setCategs(categorization.getCategs());
 			categoryUpdated = iCategorizationService.save(categoryActual);
 
 	} catch (DataAccessException e) {
