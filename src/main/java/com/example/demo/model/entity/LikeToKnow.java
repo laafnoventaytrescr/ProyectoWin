@@ -28,7 +28,7 @@ public class LikeToKnow implements Serializable{
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="categorization_id")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	Categorization categorization;
+	Categorization idCategorization;
 	
 	public Long getIdLikeToKnow() {
 		return idLikeToKnow;
@@ -53,15 +53,19 @@ public class LikeToKnow implements Serializable{
 	}
 	
 	
-	public Categorization getCategorization() {
-		return categorization;
+	
+	public Categorization getIdCategorization() {
+		return idCategorization;
 	}
 
 
 
-	public void setCategorization(Categorization categorization) {
-		this.categorization = categorization;
+	public void setIdCategorization(Categorization idCategorization) {
+		this.idCategorization = idCategorization;
 	}
+
+
+
 
 
 

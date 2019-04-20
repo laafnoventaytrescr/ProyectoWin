@@ -93,9 +93,9 @@ public class PrePlanningRestController {
 		try {
 		
 			planningActual.setMainLikeToKnow(planning.getMainLikeToKnow());
-			planningActual.setKnowAboutTheme(planning.getKnowAboutTheme());
-			planningActual.setLikeToKnow(planning.getLikeToKnow());
-			planningActual.setCategorization(planning.getCategorization());
+			planningActual.setIdKnowAboutTheme(planning.getIdKnowAboutTheme());
+			planningActual.setIdLikeToKnow(planning.getIdLikeToKnow());
+			planningActual.setIdCategorization(planning.getIdCategorization());
 			planningUpdated = prePlanningService.save(planningActual);
 		
 		} catch (DataAccessException e) {

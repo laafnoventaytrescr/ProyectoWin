@@ -28,25 +28,25 @@ public class PrePlanning implements Serializable {
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="planning_id")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	private Planning idPlanning;
+	private Planning idPlan;
 	
 	@NotNull(message="No puede ser nula")
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="know_about_theme_id")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	KnowAboutTheme knowAboutTheme;
+	KnowAboutTheme idKnowAboutTheme;
 	
 	@NotNull(message="No puede ser nula")
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="like_to_know_id")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	LikeToKnow likeToKnow;
+	LikeToKnow idLikeToKnow;
 
 	@NotNull(message="No puede ser nula")
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="categorization_id")
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
-	Categorization categorization;
+	Categorization idCategorization;
 
 	public Long getIdPrePlanning() {
 		return idPrePlanning;
@@ -64,30 +64,40 @@ public class PrePlanning implements Serializable {
 		this.mainLikeToKnow = mainLikeToKnow;
 	}
 
-
-	public KnowAboutTheme getKnowAboutTheme() {
-		return knowAboutTheme;
+	public Planning getIdPlan() {
+		return idPlan;
 	}
 
-	public void setKnowAboutTheme(KnowAboutTheme knowAboutTheme) {
-		this.knowAboutTheme = knowAboutTheme;
+	public void setIdPlan(Planning idPlan) {
+		this.idPlan = idPlan;
 	}
 
-	public LikeToKnow getLikeToKnow() {
-		return likeToKnow;
+	public KnowAboutTheme getIdKnowAboutTheme() {
+		return idKnowAboutTheme;
 	}
 
-	public void setLikeToKnow(LikeToKnow likeToKnow) {
-		this.likeToKnow = likeToKnow;
+	public void setIdKnowAboutTheme(KnowAboutTheme idKnowAboutTheme) {
+		this.idKnowAboutTheme = idKnowAboutTheme;
 	}
 
-	public Categorization getCategorization() {
-		return categorization;
+	public LikeToKnow getIdLikeToKnow() {
+		return idLikeToKnow;
 	}
 
-	public void setCategorization(Categorization categorization) {
-		this.categorization = categorization;
+	public void setIdLikeToKnow(LikeToKnow idLikeToKnow) {
+		this.idLikeToKnow = idLikeToKnow;
 	}
+
+	public Categorization getIdCategorization() {
+		return idCategorization;
+	}
+
+	public void setIdCategorization(Categorization idCategorization) {
+		this.idCategorization = idCategorization;
+	}
+
+
+
 
 
 
