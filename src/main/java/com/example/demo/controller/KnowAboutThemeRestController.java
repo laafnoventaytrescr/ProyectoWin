@@ -73,7 +73,7 @@ public class KnowAboutThemeRestController {
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		response.put("mensaje", "¡Ha sido creado con éxito!");
-		response.put("user", knowAboutNew);
+		response.put("knowAboutTheme", knowAboutNew);
 		
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}

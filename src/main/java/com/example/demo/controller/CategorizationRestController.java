@@ -72,7 +72,7 @@ public class CategorizationRestController {
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		response.put("mensaje", "¡La categoría ha sido creada con éxito!");
-		response.put("user", categorizationNew);
+		response.put("categorization", categorizationNew);
 		
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
