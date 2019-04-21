@@ -40,15 +40,7 @@ public class MediationStrategies implements Serializable {
     @Column(name = "working_days")
     private List<String> workingDays;
     
-    @ElementCollection
-    @CollectionTable(name = "strategy_holydays", joinColumns = @JoinColumn(name = "mediation_strategies_id"))
-    @Column(name = "holydays")
-    private List<String> holydays;
-    
 	private String content;
-	
-	@Column(name="holy_day_option")
-	private String holyDayOption;
 	
 	private String resources;
 	
@@ -59,8 +51,6 @@ public class MediationStrategies implements Serializable {
 	private String strategy;
 	
 	private String indicator;
-	
-	private String comment;
 	
 	@JsonIgnore
 	@OneToOne(fetch = FetchType.EAGER)
@@ -118,14 +108,6 @@ public class MediationStrategies implements Serializable {
 		this.skills = skills;
 	}
 
-	public String getHolyDayOption() {
-		return holyDayOption;
-	}
-
-	public void setHolyDayOption(String holyDayOption) {
-		this.holyDayOption = holyDayOption;
-	}
-
 	public String getUnit() {
 		return unit;
 	}
@@ -150,14 +132,6 @@ public class MediationStrategies implements Serializable {
 		this.indicator = indicator;
 	}
 
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
 	public List<String> getWorkingDays() {
 		return workingDays;
 	}
@@ -166,14 +140,4 @@ public class MediationStrategies implements Serializable {
 		this.workingDays = workingDays;
 	}
 
-	public List<String> getHolydays() {
-		return holydays;
-	}
-
-	public void setHolydays(List<String> holydays) {
-		this.holydays = holydays;
-	}
-	
-	
-	
 }
