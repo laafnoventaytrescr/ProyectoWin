@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-import org.hibernate.mapping.Array;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +24,5 @@ public class EducationalRegionController {
 		return educationalRegionService.findAll();                                     
 	}
 
-	@GetMapping("/prueba")
-	public int[] prueba(){
-		int[] pru = {'1','2','3'};
-		return pru;
-	}
+	
 }
