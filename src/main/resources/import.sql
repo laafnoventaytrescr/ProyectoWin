@@ -31,6 +31,33 @@ insert into units(name, description, created_at, modified_at, identity_version, 
 insert into correlation(concept, level, unit_id, pre_planning_id) values ('Descubrir aspectos de nutrición y salud', 'preescolar', 1, 1);
 insert into correlation(concept, level, unit_id, pre_planning_id) values ('Numeros del 1 al 10', 'preescolar', 4, 3);
 
+insert into educational_region(region_name, cant_circuits) values ('SAN JOSÉ CENTRAL', 6);
+insert into educational_region(region_name, cant_circuits) values ('SAN JOSÉ NORTE', 6);
+insert into educational_region(region_name, cant_circuits) values ('SAN JOSÉ OESTE', 5);
+insert into educational_region(region_name, cant_circuits) values ('DESAMPARADOS', 7);
+insert into educational_region(region_name, cant_circuits) values ('PURISCAL', 7);
+insert into educational_region(region_name, cant_circuits) values ('PEREZ ZELEDÓN', 10);
+insert into educational_region(region_name, cant_circuits) values ('LOS SANTOS', 3);
+insert into educational_region(region_name, cant_circuits) values ('ALAJUELA', 10);
+insert into educational_region(region_name, cant_circuits) values ('OCCIDENTE', 9);
+insert into educational_region(region_name, cant_circuits) values ('SAN CARLOS', 14);
+insert into educational_region(region_name, cant_circuits) values ('ZONA NORTE', 8);
+insert into educational_region(region_name, cant_circuits) values ('CARTAGO', 8);
+insert into educational_region(region_name, cant_circuits) values ('TURRIALBA', 9);
+insert into educational_region(region_name, cant_circuits) values ('HEREDIA', 7);
+insert into educational_region(region_name, cant_circuits) values ('SARAPIQUÍ', 5);
+insert into educational_region(region_name, cant_circuits) values ('LIBERIA', 5);
+insert into educational_region(region_name, cant_circuits) values ('NICOYA', 8);
+insert into educational_region(region_name, cant_circuits) values ('SANTA CRUZ', 7);
+insert into educational_region(region_name, cant_circuits) values ('CAÑAS', 5);
+insert into educational_region(region_name, cant_circuits) values ('PUNTARENAS', 8);
+insert into educational_region(region_name, cant_circuits) values ('COTO', 14);
+insert into educational_region(region_name, cant_circuits) values ('AGUIRRE', 6);
+insert into educational_region(region_name, cant_circuits) values ('GRANDE DE TÉRRABA', 13);
+insert into educational_region(region_name, cant_circuits) values ('PENÍNSULAR', 4);
+insert into educational_region(region_name, cant_circuits) values ('LIMÓN', 9);
+insert into educational_region(region_name, cant_circuits) values ('GUÁPILES', 8);
+insert into educational_region(region_name, cant_circuits) values ('SULA', 6);
 
 
 
