@@ -33,7 +33,7 @@ public class Planning implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
 	
-	private String durationWeeks;
+	private int durationWeeks;
 	
 	private String optionWork;
 	
@@ -77,11 +77,11 @@ public class Planning implements Serializable{
 		this.startDate = startDate;
 	}
 
-	public String getDurationWeeks() {
+	public int getDurationWeeks() {
 		return durationWeeks;
 	}
 
-	public void setDurationWeeks(String durationWeeks) {
+	public void setDurationWeeks(int durationWeeks) {
 		this.durationWeeks = durationWeeks;
 	}
 

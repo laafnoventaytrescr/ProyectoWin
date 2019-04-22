@@ -1,5 +1,10 @@
 package com.example.demo.controller;
 
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,11 +27,13 @@ import com.example.demo.auth.service.JWTService;
 import com.example.demo.model.entity.Correlation;
 import com.example.demo.model.entity.LikeToKnow;
 import com.example.demo.model.entity.MediationStrategies;
+import com.example.demo.model.entity.Planning;
 import com.example.demo.model.entity.Unit;
 import com.example.demo.model.error.DataAccessRuntimeException;
 import com.example.demo.model.service.ICorrelationService;
 import com.example.demo.model.service.ILikeToKnowService;
 import com.example.demo.model.service.IMediationStrategiesService;
+import com.example.demo.model.service.IPlanningService;
 import com.example.demo.model.service.IUnitService;
 import com.example.demo.model.service.IUserService;
 
@@ -51,6 +58,9 @@ public class MediationStrategiesController {
 	
 	@Autowired
 	ILikeToKnowService likeToKnowDao;
+	
+	@Autowired
+	IPlanningService planningDao;
 	
 	@GetMapping(value="/strategies")
 	public ResponseEntity<List<MediationStrategies>> loadStrategies(HttpServletRequest request){
@@ -94,8 +104,8 @@ public class MediationStrategiesController {
     		}
 	}
 	
-	@GetMapping(value="/createStrategy")
-	public ResponseEntity<?> loadStrategy(HttpServletRequest request){
+	@GetMapping(value="/createStrategy/{planId}")
+	public ResponseEntity<List<Object>> loadStrategy(@PathVariable Long planId, HttpServletRequest request){
 			
 		Long userId = getUserIdByToken(request);
 		
@@ -104,17 +114,24 @@ public class MediationStrategiesController {
 		List<Correlation> correlation;
 		List<LikeToKnow> likeToKnow;
 		List<Unit> units;
+		Planning plan;
+		List<String> fechas = new ArrayList<>();
+		List<Object> responseJson = new ArrayList<>();
 		
 		try {
 		      units = unitDao.findAll();
 		      correlation = correlationDao.findAllByPrePlanning_IdPrePlanning(userId);
 		      likeToKnow = likeToKnowDao.findAllByIdLikeToKnow(userId);
+		      plan = planningDao.findById(planId);
 		      
-		      if(units == null || correlation == null || likeToKnow == null) {
+		      if(units == null || correlation == null || likeToKnow == null || plan == null) {
 		    	  
 		    	  return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
 		      }
 		      
+		      Date fechaInicio = plan.getStartDate();
+		      int duracionSemanas = plan.getDurationWeeks();
+		      fechas = calcularFechas(fechaInicio,duracionSemanas);
 		      
 		      response.put("unit1",units.get(0).getName().toString());
 		      response.put("unit2",units.get(1).getName().toString());
@@ -125,12 +142,15 @@ public class MediationStrategiesController {
 		      response.put("level",correlation.get(0).getLevel());
 		      response.put("description",likeToKnow.get(0).getDescription());
 		      
+		      responseJson.add(response);
+		      responseJson.add(fechas);
+		      
 		}catch(DataAccessException ex) {
 			
 			  throw new DataAccessRuntimeException("Error al consultar base de datos");                   //Metodo para devolver datos a la vista crear estrategia 
 		}
 
-			return new ResponseEntity<>(response,HttpStatus.OK);  
+			return new ResponseEntity<>(responseJson,HttpStatus.OK);  
 
 	}
 	
@@ -179,5 +199,41 @@ public class MediationStrategiesController {
     	String header = request.getHeader(StaticSpring.HEADER_STRING);                              //Metodo para obtener email de usuario con token
 		
 		return tokenService.getUsername(header);
+    }
+    
+    public List<String> calcularFechas(Date fechaInicio, int duracionSemanas){
+    	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd"); 
+    	int dias = 0;
+    	List<String> fechas = new ArrayList<>();
+    	
+         Calendar calendar = Calendar.getInstance();
+         calendar.setTime(fechaInicio); 
+         switch(duracionSemanas) {
+         
+         case 1:
+        	 dias = 8;
+        	 break;
+         case 2:
+        	 dias = 16;
+        	 break;
+         case 3:
+        	 dias = 24;
+        	 break;
+         case 4:
+        	 dias = 31;
+        	 break;
+        	 };
+        	 
+        for(int i = 0; i < dias; i++) {
+        	if(calendar.get(Calendar.DAY_OF_WEEK) != 7 && calendar.get(Calendar.DAY_OF_WEEK) != 1) {
+        		
+        		fechas.add(format.format(calendar.getTime()));
+        		
+        	}
+        	calendar.add(Calendar.DAY_OF_YEAR, 1);
+        	
+        }
+         
+        return fechas;
     }
 }
